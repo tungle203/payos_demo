@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css?family=Abel|Aguafina+Script|Artifika|Athiti|Condiment|Dosis|Droid+Serif|Farsan|Gurajada|Josefin+Sans|Lato|Lora|Merriweather|Noto+Serif|Open+Sans+Condensed:300|Playfair+Display|Rasa|Sahitya|Share+Tech|Text+Me+One|Titillium+Web");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+body {
+  background-attachment: fixed;
+  background-image: url('background.jpg');
+  background-repeat: repeat;
+  background-size: cover; 
+  background-position: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  box-shadow: 0 15px 30px 1px rgba(128, 128, 128, 0.31);
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 500px;
+  width: 700px;
+  margin: 2em auto;
+}
+
+
+.product-details {
+  position: relative;
+  text-align: left;
+  overflow: hidden;
+  padding: 30px;
+  height: 100%;
+  float: left;
+  width: 40%;
+}
+
+.container .product-details h1 {
+  font-family: "Old Standard TT", serif;
+  text-align: center;
+  display: inline-block;
+  position: relative;
+  font-size: 34px;
+  color: #344055;
+  margin: 0;
+}
+
+.container .product-details h1:before {
+  position: absolute;
+  content: "";
+  right: 0%;
+  top: 0%;
+  transform: translate(25px, -15px);
+  font-family: "Farsan", cursive;
+  display: inline-block;
+  background: #ffa69e;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 5px;
+  color: #fff;
+  margin: 0;
+  animation: chan-sh 6s ease infinite;
+}
+
+@keyframes chan-sh {
+  from {
+    content: "New";
+  }
+  to {
+    content: "New";
+  }
+}
+
+.container .product-details .information {
+  display: inline-block;
+  margin-top: 2em;
+}
+
+.container .product-details p {
+  font-family: "Farsan", cursive;
+  text-align: center;
+  font-size: 20px;
+  color: #7d7d7d;
+}
+
+.control {
+  position: absolute;
+  bottom: 20%;
+  left: 22.8%;
+}
+
+.btn {
+  transform: translateY(0px);
+  transition: 0.3s linear;
+  background: #49c608;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: #eee;
+  padding: 0;
+  margin: 0;
+}
+
+.btn:hover {
+  transform: translateY(-10px);
+}
+
+.btn span {
+  font-family: "Farsan", cursive;
+  transition: transform 0.3s;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.btn .price {
+  background: #333;
+  border: 0;
+  margin: 0;
+  transform: translateX(-10%);
+  padding-right: 15px;
+
+}
+
+.btn .buy {
+  z-index: 3;
+  font-weight: bolder;
+}
+
+
+.product-image {
+  transition: all 0.3s ease-out;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  float: right;
+  width: 50%;
+  display: inline-block;
+}
+
+.container img {
+  width: 100%;
+  height: 100%;
+}
+
+.info {
+  background: rgba(27, 26, 26, 0.9);
+  font-family: "Farsan", cursive;
+  transition: all 0.3s ease-out;
+  transform: translateX(-100%);
+  position: absolute;
+  line-height: 1.9;
+  text-align: left;
+  font-size: 120%;
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+.info h2 {
+  text-align: center;
+}
+.product-image:hover .info {
+  transform: translateX(0);
+}
+
+.info ul li {
+  transition: 0.3s ease;
+}
+.info ul li:hover {
+  transform: translateX(10px) scale(1.05);
+}
+
+.product-image:hover img {
+  transition: all 0.3s ease-out;
+}
+.product-image:hover img {
+  transform: scale(1.2, 1.2);
+}
+
+.formbold-mb-5 {
+  margin-bottom: 20px;
+}
+.formbold-pt-3 {
+  padding-top: 12px;
+}
+.formbold-main-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  display: none;
+}
+
+.formbold-form-wrapper {
+  margin: 0 auto;
+  max-width: 550px;
+  width: 100%;
+}
+.formbold-form-label {
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  color: #07074d;
+  margin-bottom: 4px;
+}
+.formbold-form-label-2 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.formbold-form-input {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 0 -8px;
+  border-radius: 6px;
+  border: 1px solid #e0e0e0;
+  font-weight: 500;
+  font-size: 16px;
+  color: #6b7280;
+  outline: none;
+  resize: none;
+}
+.formbold-form-input:focus {
+  border-color: #49c608;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+}
+
+.formbold-btn {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  padding: 14px 32px;
+  border: none;
+  font-weight: 600;
+  background-color: #49c608;
+  color: #eee;
+
+  width: 100%;
+  transition: 0.3s linear;
+
+  cursor: pointer;
+}
+.formbold-btn:hover {
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+  transform: translateY(-10px);
+
+}
+
+.formbold--mx-3 {
+  margin-left: -12px;
+  margin-right: -12px;
+}
+.formbold-px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.flex {
+  display: flex;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.w-full {
+  width: 100%;
+}

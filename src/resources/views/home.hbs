@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BÍ MẬT CỦA MAY MẮN</title>
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="https://cdnjs.com/libraries/font-awesome" />
+</head>
+
+<body>
+  <main>
+    <div class="container">
+      <div class="product-details">
+        <div class="formbold-main-wrapper" id="form-wrapper">
+          <div class="formbold-form-wrapper">
+            <form action="/pay" method="POST" id="payment-form">
+              <div class="formbold-mb-5">
+                <label for="name" class="formbold-form-label"> Họ và tên </label>
+                <input type="text" name="name" id="name" placeholder="Nhập tên đầy đủ..." class="formbold-form-input" required />
+              </div>
+              <div class="formbold-mb-5">
+                <label for="phone" class="formbold-form-label"> Số điện thoại </label>
+                <input type="text" name="phone" id="phone" placeholder="Nhập số điện thoại..."
+                  class="formbold-form-input" required />
+              </div>
+              <div class="formbold-mb-5">
+                <label for="email" class="formbold-form-label"> Email </label>
+                <input type="email" name="email" id="email" placeholder="Nhập email..." class="formbold-form-input"
+                  required />
+              </div>
+
+
+              <div>
+                <button class="formbold-btn">Thanh toán: 10.000 VNĐ</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+        <div id="details">
+          <h1>BÍ MẬT CỦA MAY MẮN</h1>
+          <p>by Alex Rovira Fernando Trías de Bes</p>
+          <p class="information">
+            "Bí quyết tạo nên may mắn trong công việc, tình yêu và cuộc sống"
+          </p>
+          <div class="control">
+            <button class="btn" id="buy-btn">
+              <span class="price">10.000 VNĐ</span>
+              <span class="buy">Mua ngay</span>
+            </button>
+
+          </div>
+        </div>
+      </div>
+      <div class="product-image">
+        <img src="bookImage.png" alt="" />
+        <div class="info">
+          <h2>Mô tả</h2>
+          <ul>
+            <li>
+              Cuốn sách sau 6 tháng phát hành đã bán được trên 2.500.000 bản
+              trên toàn thế giới
+            </li>
+            <li>
+              Được bình chọn là cuốn sách bán chạy nhất tại châu Âu, Nhật Bản,
+              Brazil, Tây Ban Nha, Hàn Quốc, Mỹ, Đài Loan...
+            </li>
+            <li>Được chọn là JAPAN BOOK OF THE YEAR 2004.</li>
+            <li>
+              Việt Nam là quốc gia thứ 68 trên thế giới mua bản quyền Good
+              Luck.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script>
+  if ({{isPaid}}) {
+    const button = document.getElementById('buy-btn');
+    button.addEventListener('click', () => {
+      window.location.href = '/success';
+    });
+  } else {
+      const hideButton = document.getElementById('buy-btn');
+      hideButton.addEventListener('click', hideDiv);
+      function hideDiv() {
+        setTimeout(() => {
+          const details = document.getElementById('details');
+          details.style.display = 'none';
+          const formWrapper = document.getElementById('form-wrapper');
+          formWrapper.style.display = 'block';
+        }, 300)
+    }
+  }
+
+    const paymentForm = document.getElementById('payment-form');
+
+    paymentForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+
+      const isValidEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email);
+      const isValidPhone = phone.length === 10
+
+    if (!isValidEmail) {
+        alert('Email không hợp lệ!');
+        return;
+      }
+
+      if (!isValidPhone) {
+        alert('Số điện thoại không hợp lệ!');
+        return;
+      }
+
+      paymentForm.submit()
+    })
+</script>
+
+</html>
